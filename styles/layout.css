@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#overlay-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#overlay {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    /* opacity: .5; */
+}
+
+#slime {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    /* mix-blend-mode: color;  */
+}
+
+#console {
+    border: 1px solid yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#screen-1 {
+    height: 80px;
+    border: 1px solid pink;
+    position: relative;
+    top: 13%;
+    height: 37%;
+    width: 70%;
+    overflow: hidden;
+}
+
+/* if width is longer  */
+@media (min-width: calc(16 * (100vh / 9))) {
+    #overlay {
+        width: 100%;
+    }
+
+    #console {
+        position: relative;
+        left: 50px;
+        height: 80vh;
+        min-height: 45vw;
+        width: 40vw;
+    }
+}
+
+/* if height is longer  */
+@media (max-width: calc(16 * (100vh / 9))) {
+    #overlay {
+        height: 100%;
+    }
+
+    #console {
+        position: relative;
+        left: 5vw;
+        height: 80vh;
+        width: 70vh;
+    }
+}

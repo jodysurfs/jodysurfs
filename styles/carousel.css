@@ -1,0 +1,96 @@
+.carousel {
+    display: flex;
+    width: 400%;
+    height: 25%;
+    transition: animation-play-state 0.5s ease;
+}
+
+.carousel-left,
+.carousel-right {
+    position: relative;
+    width: 100%;
+    height: 110%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.carousel-left.primary {
+    left: 25%;
+    animation: left-scroller-primary 20s linear infinite;
+    animation-delay: -10s;
+}
+
+.carousel-left.secondary {
+    animation: left-scroller-secondary 20s linear infinite;
+}
+
+@keyframes left-scroller-primary {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: -50%;
+    }
+}
+
+@keyframes left-scroller-secondary {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+.carousel-right.primary {
+    animation: right-scroller-primary 20s linear infinite;
+    animation-delay: -10s;
+}
+
+.carousel-right.secondary {
+    animation: right-scroller-secondary 20s linear infinite;
+}
+
+@keyframes right-scroller-primary {
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes right-scroller-secondary {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+.carousel-item {
+    max-height: 110%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+video {
+    max-height: 110%;
+    max-width: 110%;
+    object-fit: cover;
+}
+
+.big-vid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
