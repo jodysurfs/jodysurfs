@@ -14,49 +14,44 @@ for (index = 0; index < howManyVids; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/120vid' + rnd + '.mp4';
+    newVid.src = 'vids/120/trim/trim120vid' + rnd + '.mp4';
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
-    // newVid.poster = 'vids/240/poster/240vid' + rnd + '.jpg';
     carouselItem.appendChild(newVid);
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselLeft[i].appendChild(clone);
+        playRnd;
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/120vid' + rnd2 + '.mp4';
-    // newVid.poster = 'vids/240/poster/240vid' + rnd2 + '.jpg';
+    newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
+        playRnd;
     }
 };
 
-let temp = 4;
 for (index = 0; index < howManyVids; index++) {
-    if (temp == howManyVids) {
-        temp = 0;
-    }
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/120vid' + rnd + '.mp4';
+    newVid.src = 'vids/120/trim/trim120vid' + rnd + '.mp4';
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
-    // newVid.poster = 'vids/240/poster/240vid' + rnd + '.jpg';
     carouselItem.appendChild(newVid);
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselLeft[i].appendChild(clone);
+        playRnd;
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/120vid' + rnd2 + '.mp4';
-    // newVid.poster = 'vids/240/poster/240vid' + rnd2 + '.jpg';
+    newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
+        playRnd;
     }
-    temp++;
 };
 
 const carouselVids = document.querySelectorAll(".carousel-video");
@@ -66,7 +61,7 @@ const carouselVids = document.querySelectorAll(".carousel-video");
 function carouselVidsProperties() {
     carouselVids.forEach((element, index) => {
         element.loop = true;
-        element.volume = 0;
+        element.muted = true;
         element.controls = false;
     });
 };
@@ -74,13 +69,17 @@ carouselVidsProperties();
 
 // start playing carousel vids from a random point 
 
-carouselVids.forEach((element, index) => {
-    element.addEventListener("loadedmetadata", function () {
-        let randomseconds = Math.round(Math.random() * carouselVids[index].duration);
-        element.currentTime = randomseconds;
+function playRnd() {
+    carouselVids.forEach((element, index) => {
         element.play();
+        element.addEventListener("loadedmetadata", function () {
+            let randomseconds = Math.round(Math.random() * carouselVids[index].duration);
+            element.currentTime = randomseconds;
+            element.play();
+        });
     });
-});
+};
+playRnd();
 
 // slow down playback speed + enlarge vids on hover + show video title on bottom screen
 
@@ -159,7 +158,7 @@ carouselVids.forEach((element, index) => {
             }
         });
         let esc = document.createElement('div');
-        esc.id = 'esc';        
+        esc.id = 'esc';
         // esc.innerHTML = "Esc."
         s21.appendChild(esc);
         s22.innerHTML = flava[cleanedSrc];
