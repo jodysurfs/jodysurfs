@@ -1,7 +1,7 @@
 // SPACEBAR PAUSE/PLAY VID
 
 document.addEventListener('keydown', e => {
-    if (e.code === 'Space' || e.keyCode === 32 || e.key === ' ') {
+    if (e.code === 'Space' || e.key === ' ') {
         e.preventDefault();
         let bigVid = document.querySelector(`.big-vid`);
         if (bigVid.paused || bigVid.ended) {
@@ -18,8 +18,9 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'Esc' || event.code === 'Escape') {
         let bigVid = document.querySelector(`.big-vid`);
         if (!bigVid) return;
+        stopScrolling = true;
         screen1.removeChild(bigVid);
-        s22.innerHTML = message;
+        homeContainer.style.display = "flex";
     }
 });
 
@@ -67,7 +68,7 @@ function volUp(e) {
     e.preventDefault();
     volLevel = Math.min(volLevel + 0.1, 1);
     if (typeof currentVid !== 'undefined') {
-        currentVid.volume = volLevel;
+        currentVid.volume = volLevel;bigVid
     };
 };
 
@@ -78,6 +79,21 @@ function volDown(e) {
         currentVid.volume = volLevel;
     };
 };
+
+// M to mute video
+
+document.addEventListener('keydown', e => {
+    if (e.code === 'KeyM' || e.key.toLowerCase === 'm' || e.key === 'M') {
+        e.preventDefault();
+        let bigVid = document.querySelector(`.big-vid`);
+        if (bigVid.muted) {
+            bigVid.muted = false;
+        } else {
+            bigVid.muted = true;
+        }
+    }
+});
+
 
 // LEFT+RIGHT - SKIP 10 SECONDS BACKWARDS+ FORWARD
 

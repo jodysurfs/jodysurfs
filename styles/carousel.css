@@ -1,5 +1,6 @@
 .carousel {
     display: flex;
+    /* display: none; */
     width: 400%;
     height: 25%;
     transition: animation-play-state 0.5s ease;

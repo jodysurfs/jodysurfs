@@ -11,8 +11,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet&family=Press+Start+2P&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Handjet&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="styles/screen-2.css">
@@ -20,10 +20,15 @@
 
 <body>
     <div id="overlay-container">
-        <img id="overlay" src="pics/overlay.png" alt="">
-        <!-- <img id="slime" src="pics/slime.png" alt=""> -->
+        <img id="underlay" src="pics/underlay1.webp" alt="">
+        <img id="overlay" src="pics/overlay.webp" alt="">
         <div id="console">
             <div id="screen-1">
+                <div id="loading-container">
+                    <div id="loading">
+                        Loading...
+                    </div>
+                </div>
                 <div class="carousel" id="carousel-1">
                     <div class="carousel-left primary"></div>
                     <div class="carousel-left secondary"></div>
@@ -42,10 +47,34 @@
                 </div>
             </div>
             <div id="screen-2">
-                <div id="s2-1"></div>
-                <div id="s2-2"></div>
-                <div id="s2-3"></div>
-                <div id="s2-4"></div>
+                <div class="s2" id="home-container">
+                    <div class="home" id="home-message">
+                        Pick a Video!
+                    </div>
+                    <div class="home" id="home-titles">
+                    </div>
+                </div>
+                <div class="s2" id="vid-info-container">
+                    <div class="vid-info" id="ipod-info">
+                        <div id="album-art">
+                            <img src="pics/album-art/fire-fantasy.jpg">
+                        </div>
+                        <div class="song-info-container" id="song-info">
+                            <div class="song-info" id="artist">
+                                artist <br>
+                            </div>
+                            <div class="song-info" id="song">
+                                song <br>
+                            </div>
+                            <div class="song-info" id="flava">
+                                "flava text" <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vid-info" id="prog-bar"></div>
+                    <div class="vid-info" id="open-controls"></div>
+                </div>
+                <div class="s2" id="vid-controls-container"></div>
             </div>
         </div>
     </div>

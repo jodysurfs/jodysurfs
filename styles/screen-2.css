@@ -1,39 +1,114 @@
 #screen-2 {
+    transform-origin: center left;
+    transform: rotate(-5deg) perspective(100px) rotateY(1.5deg) rotateX(4deg);
     position: relative;
-    top: 20%;
+    top: 25%;
     left: 5%;
     height: 35%;
     width: 64%;
-    transform: rotate(-5deg);
-    background-color: aqua;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.s2 {
+    flex: 0 0 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    position: relative;
+    flex: 0 0 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    border: 1px solid pink;
 }
 
-#screen-2 * {
-    height: 25%;
-    width: 80%;
+#home-titles {
+    font-size: 50%;
+}
+
+#vid-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+}
+
+.vid-info {
+    flex: 0 0 20%;
+    font-size: 50%;
+
+}
+
+#ipod-info {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#ipod-info * {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
-#esc {
-    align-self: left;
+#album-art {
+    flex: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#album-art img {
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(-5px 5px 4px #00000050);
+}
+
+#song-info {
+    flex: 3;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 1%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent 3%, red 6%, red 75%, transparent 95%);
+    mask: linear-gradient(90deg, transparent 3%, red 6%, red 75%, transparent 95%);
+}
+
+.song-info-container {
+    font-size: 100%;
+}
+
+#song-info * {
+    align-items: flex-start;
     text-align: left;
-    justify-self: left;
 }
 
-#s2-2 {
-    font-size: larger;
-}
-#s2-3 {
-    font-size: small;
+.song-info {
+    margin-left: 4%;
+    font-size: 100%;
 }

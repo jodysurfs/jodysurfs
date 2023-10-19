@@ -24,21 +24,5 @@ function playVid() {
     }
 };
 
-// title banner
-
-var titleText = document.querySelector('#title-text');
-
-// function updateBanner() {
-//     titleText.innerHTML = "";
-//     for (i = 0; i < 100; i++) {
-//         titleText.innerHTML += titles[0] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//         titleText.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-//     };
-// }
-
-// updateBanner();
-const s21 = document.querySelector("#s2-1");
-const s22 = document.querySelector("#s2-2");
-const s23 = document.querySelector("#s2-3");
-const s24 = document.querySelector("#s2-4");
-s22.innerHTML = message;
+const homeMessage = document.querySelector("#home-message");
+homeMessage.innerHTML = message;

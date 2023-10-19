@@ -6,7 +6,7 @@ const titles = [
     `DEVOUR YOUR ENEMIES - LOVELOOP`,
     `Lord of Email - Lite Green Neon Bombs`,
     `Dandy Deniz - Change`,
-    `race cars`,
+    `jody surfs - race cars`,
     // `mallgoth emo sad animation`,
 ];
 
@@ -18,4 +18,7 @@ const flava = [
     `(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ`,
     `This guy is vague af tbh`,
     `love me some loveloops`,
+    `email king this guy`,
+    `never change bro`,
+    `let's start the race!`,
 ];
