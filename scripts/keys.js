@@ -68,7 +68,7 @@ function volUp(e) {
     e.preventDefault();
     volLevel = Math.min(volLevel + 0.1, 1);
     if (typeof currentVid !== 'undefined') {
-        currentVid.volume = volLevel;bigVid
+        currentVid.volume = volLevel; bigVid
     };
 };
 
@@ -86,10 +86,9 @@ document.addEventListener('keydown', e => {
     if (e.code === 'KeyM' || e.key.toLowerCase === 'm' || e.key === 'M') {
         e.preventDefault();
         let bigVid = document.querySelector(`.big-vid`);
-        if (bigVid.muted) {
-            bigVid.muted = false;
-        } else {
-            bigVid.muted = true;
+        console.log(`m pressed`);
+        if (bigVid) {
+            bigVid.muted = !bigVid.muted;
         }
     }
 });

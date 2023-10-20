@@ -4,6 +4,31 @@
     font-family: 'Aldrich';
 }
 
+#mute-icon {
+    position: absolute;
+    z-index: 2;
+    margin: 15px;
+    top: 85vh;
+    /* border: 1px solid black; */
+    color: #fff;
+    filter: drop-shadow(-2px 2px 2px #00000050);
+    height: 20vh;
+    width: 20vh;
+    transition: opacity 1s, color .1s, height .1s;
+    /* opacity: .9; */
+}
+
+#mute-icon:hover {
+    opacity: .85;
+    height: 17vh;
+
+}
+
+#mute-icon:active {
+    color: #555555;
+    height: 17vh;
+}
+
 #overlay-container {
     position: absolute;
     width: 100%;
@@ -18,7 +43,7 @@
     position: absolute;
     pointer-events: none;
     z-index: 1;
-    opacity: .9;
+    /* opacity: .9; */
 }
 
 #underlay {

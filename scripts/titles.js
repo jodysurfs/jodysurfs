@@ -18,7 +18,7 @@ const flava = [
     `(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ`,
     `This guy is vague af tbh`,
     `love me some loveloops`,
-    `email king this guy`,
+    `wow he is sending so many emails!!!!`,
     `never change bro`,
     `let's start the race!`,
 ];
