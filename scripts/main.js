@@ -1,6 +1,44 @@
 const vid7 = document.querySelector("#vid7");
 const playBtn = document.querySelector("#play-btn");
 const muteBtn = document.querySelector("#mute-btn");
+const logoAnim = document.querySelector("#logo-anim");
+const logoAnim2 = document.querySelector("#logo-anim2");
+
+function playLogoAnim(i) {
+    if (i < 166) {
+        let iPadded = i.toString().padStart(4, '0');
+        logoAnim.src = "pics/logo-anim/logo_" + iPadded + ".png";
+        logoAnim.style.transform = `rotate(${90 -i}deg)`;
+        setTimeout(function () {
+            playLogoAnim(i + 1);
+        }, 25);
+    }
+}
+
+setInterval(function () {
+    playLogoAnim(0);
+}, 8000);
+
+function playLogoAnim2(i) {
+    if (i < 166) {
+        let iPadded = i.toString().padStart(4, '0');
+        logoAnim2.src = "pics/logo-anim2/logo_" + iPadded + ".png";
+        logoAnim2.style.transform = `rotate(${-i}deg)`;
+        setTimeout(function () {
+            playLogoAnim2(i + 1);
+        }, 25);
+    }
+};
+
+function delayLogoAnim2() {
+    setTimeout(function () {
+        playLogoAnim2(0);
+    }, 1000); // Wait for 1 second before initiating the animation
+}
+
+setInterval(function () {
+    delayLogoAnim2(0);
+}, 8000);
 
 function pauseCurrentVid() {
     vid7.pause();
