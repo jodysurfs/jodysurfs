@@ -8,16 +8,33 @@ function playLogoAnim(i) {
     if (i < 166) {
         let iPadded = i.toString().padStart(4, '0');
         logoAnim.src = "pics/logo-anim/logo_" + iPadded + ".png";
-        logoAnim.style.transform = `rotate(${90 -i}deg)`;
         setTimeout(function () {
             playLogoAnim(i + 1);
         }, 25);
     }
 }
 
-setInterval(function () {
+function rotateLogoAnim(i) {
+    if (i < 166) {
+        logoAnim.style.transform = `rotate(${90 -i}deg)`;
+        setTimeout(function () {
+            rotateLogoAnim(i + 1);
+        }, 25);
+    }
+}
+
+function swirl() {
     playLogoAnim(0);
-}, 8000);
+    rotateLogoAnim(0);
+    delayLogoAnim2(0);
+};
+
+setTimeout(swirl, 3000);
+
+setInterval(function () {
+    logoAnim.style.transform = `rotate(0deg)`;
+    playLogoAnim(0);
+}, 20000);
 
 function playLogoAnim2(i) {
     if (i < 166) {
@@ -35,10 +52,6 @@ function delayLogoAnim2() {
         playLogoAnim2(0);
     }, 1000); // Wait for 1 second before initiating the animation
 }
-
-setInterval(function () {
-    delayLogoAnim2(0);
-}, 8000);
 
 function pauseCurrentVid() {
     vid7.pause();

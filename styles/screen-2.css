@@ -113,3 +113,9 @@
     margin-left: 4%;
     font-size: 100%;
 }
+
+#open-controls {
+    padding: .5em;
+    border: 1px solid black;
+    border-radius: 2px;
+}

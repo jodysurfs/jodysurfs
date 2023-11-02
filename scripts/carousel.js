@@ -153,6 +153,7 @@ let stopScrolling = false;
 
 carouselVids.forEach((element, index) => {
     element.addEventListener("click", () => {
+        swirl();
         stopScrolling = false;
         let fullSrc = element.src;
         let last6Characters = fullSrc.slice(-6);
