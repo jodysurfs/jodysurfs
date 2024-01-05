@@ -4,6 +4,7 @@ const carouselLeft = document.querySelectorAll(".carousel-left");
 const carouselRight = document.querySelectorAll(".carousel-right");
 const topCarousel = document.querySelector("#top-carousel");
 const bottomCarousel = document.querySelector("#bottom-carousel");
+let carouselVids = document.querySelectorAll(".carousel-video");
 let videoFileTitles = [];
 
 for (i = 0; i < howManyVids; i++) {
@@ -21,14 +22,18 @@ for (index = 0; index < howManyVids; index++) {
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselLeft[i].appendChild(clone);
-        playRnd;
+        carouselVids = document.querySelectorAll(".carousel-video");
+        carouselVidsProperties();
+        playRnd();
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
     newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
-        playRnd;
+        carouselVids = document.querySelectorAll(".carousel-video");
+        carouselVidsProperties();
+        playRnd();
     }
 };
 
@@ -43,18 +48,25 @@ for (index = 0; index < howManyVids; index++) {
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselLeft[i].appendChild(clone);
-        playRnd;
+        carouselVids = document.querySelectorAll(".carousel-video");
+        carouselVidsProperties();
+        document.addEventListener("DOMContentLoaded", function () {
+            playRnd();
+        });
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
     newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
-        playRnd;
+        carouselVids = document.querySelectorAll(".carousel-video");
+        carouselVidsProperties();
+        document.addEventListener("DOMContentLoaded", function () {
+            playRnd();
+        });
     }
 };
 
-const carouselVids = document.querySelectorAll(".carousel-video");
 
 // add properties to carousel vids 
 
@@ -65,21 +77,31 @@ function carouselVidsProperties() {
         element.controls = false;
     });
 };
+
 carouselVidsProperties();
+
+function showVids() {
+    carouselVids.forEach((element, index) => {
+        element.style.opacity = 1;
+    });
+};
+
+setTimeout(showVids, 5000); 
 
 // start playing carousel vids from a random point 
 
 function playRnd() {
     carouselVids.forEach((element, index) => {
-        element.play();
         element.addEventListener("loadedmetadata", function () {
-            let randomseconds = Math.round(Math.random() * carouselVids[index].duration);
+            let randomseconds = Math.floor(Math.random() * carouselVids[index].duration);
+            randomseconds = Math.min(randomseconds, element.duration);
             element.currentTime = randomseconds;
             element.play();
         });
     });
 };
-playRnd();
+
+
 
 // slow down playback speed + enlarge vids on hover + show video title on bottom screen
 
@@ -88,13 +110,15 @@ const homeTitles = document.querySelector("#home-titles");
 carouselVids.forEach((element, index) => {
     element.addEventListener("mouseover", function () {
         element.playbackRate = 0.5;
-        element.style.scale = 1.5;
+        element.style.transition = 'filter 0.5s';
+        element.style.filter = 'brightness(110%) contrast(110%)';
         let cleanedSrc = element.src.slice(-6).replace('.mp4', '').replace(/[^0-9]/g, '');
         homeTitles.innerHTML = titles[cleanedSrc];
     });
     element.addEventListener("mouseleave", function () {
         element.playbackRate = 1;
-        element.style.scale = 1;
+        element.style.transition = 'filter 0.5s';
+        element.style.filter = 'brightness(100%) contrast(100%)';
     });
 });
 
@@ -142,6 +166,7 @@ carousel[3].addEventListener("mouseleave", function () {
 
 const screen2 = document.querySelector("#screen-2");
 const homeContainer = document.querySelector("#home-container");
+const vidInfoContainer = document.querySelector("#vid-info-container");
 const songInfo = document.querySelectorAll(".song-info");
 const albumArt = document.querySelector("#album-art");
 
@@ -174,8 +199,15 @@ carouselVids.forEach((element, index) => {
                 bigVid.pause();
             }
         });
-        homeContainer.style.display = "none";
-        albumArt.innerHTML = `<img src="pics/album-art/` + cleanedSrc +  `.webp">`;
+        homeContainer.style.transition = "opacity .2s ease";
+        homeContainer.style.opacity = 0;
+        setTimeout(function () {
+            homeContainer.style.display = "none";
+            vidInfoContainer.style.display = "flex";
+        }, 200);
+        vidInfoContainer.style.transition = "opacity .2s ease";
+        vidInfoContainer.style.opacity = 1;
+        albumArt.innerHTML = `<img src="pics/album-art/` + cleanedSrc + `.webp">`;
         let parts = titles[cleanedSrc].split(' - ');
         songInfo[0].innerHTML = parts[1];
         songInfo[1].innerHTML = parts[0];
@@ -216,12 +248,6 @@ carouselVids.forEach((element, index) => {
                 element.style.transform = 'translateX(0%)';
                 return;
             };
-        });
-        screen2.addEventListener("click", () => {
-            if (bigVid && screen1.contains(bigVid)) {
-                screen1.removeChild(bigVid);
-            }
-            s22.innerHTML = message;
         });
     });
 });

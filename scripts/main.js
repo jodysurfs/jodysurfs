@@ -1,3 +1,4 @@
+const modal = document.querySelector("#controls-modal");
 const vid7 = document.querySelector("#vid7");
 const playBtn = document.querySelector("#play-btn");
 const muteBtn = document.querySelector("#mute-btn");

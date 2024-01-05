@@ -2,15 +2,15 @@
     transform-origin: center left;
     transform: rotate(-5deg) perspective(100px) rotateY(1.5deg) rotateX(4deg);
     position: relative;
-    top: 25%;
+    top: 24%;
     left: 5%;
-    height: 35%;
+    height: 32%;
     width: 64%;
     display: flex;
     flex-direction: column;
     align-items: center;
     filter: drop-shadow(-5px 5px 4px #00000050);
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .s2 {
@@ -45,9 +45,11 @@
 
 #vid-info-container {
     width: 100%;
-    display: flex;
+    display: none;
+    opacity: 0;
     flex-direction: column;
     flex: 0 0 30%;
+    margin-bottom: 10%;
 }
 
 .vid-info {
@@ -114,8 +116,33 @@
     font-size: 100%;
 }
 
+#prog-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#prog-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #open-controls {
-    padding: .5em;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: .6em; */
+}
+
+#controls-button {
+    font-size: 100%;
+    padding: .3em;
     border: 1px solid black;
     border-radius: 2px;
+    cursor: pointer;
 }
