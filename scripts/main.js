@@ -5,6 +5,11 @@ const playBtn = document.querySelector("#play-btn");
 const muteBtn = document.querySelector("#mute-btn");
 const logoAnim = document.querySelector("#logo-anim");
 const logoAnim2 = document.querySelector("#logo-anim2");
+var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+// if (screenHeight > 2000) {
+//     document.getElementById('fuzzVideo').src = 'vids/fuzz/fuzz-big.mp4';
+// }
 
 function fadeFuzz() {
     fuzz.style.opacity = 0;
@@ -23,6 +28,8 @@ setTimeout(function () {
         homeTitles.style.opacity = 1;
     }, 2000);
 }, 2500);
+
+// SWIRLY LOGO ANIMATION
 
 function playLogoAnim(i) {
     if (i < 166) {
@@ -43,18 +50,18 @@ function rotateLogoAnim(i) {
     }
 }
 
-function swirl() {
-    playLogoAnim(0);
-    rotateLogoAnim(0);
-    delayLogoAnim2(0);
-};
+// function swirl() {
+//     playLogoAnim(0);
+//     rotateLogoAnim(0);
+//     delayLogoAnim2(0);
+// };
 
-setTimeout(swirl, 3000);
+// setTimeout(swirl, 3000);
 
-setInterval(function () {
-    logoAnim.style.transform = `rotate(0deg)`;
-    playLogoAnim(0);
-}, 20000);
+// setInterval(function () {
+//     logoAnim.style.transform = `rotate(0deg)`;
+//     playLogoAnim(0);
+// }, 20000);
 
 function playLogoAnim2(i) {
     if (i < 166) {
@@ -70,27 +77,5 @@ function playLogoAnim2(i) {
 function delayLogoAnim2() {
     setTimeout(function () {
         playLogoAnim2(0);
-    }, 1000); // Wait for 1 second before initiating the animation
+    }, 1000);
 }
-
-function pauseCurrentVid() {
-    vid7.pause();
-    playBtn.innerHTML = `<svg width="14px" fill="currentColor" viewBox="0 0 210 210">
-    <path d="M179.07,105L30.93,210V0L179.07,105z" />
-</svg>`;
-};
-
-// playBtn.addEventListener('click', playVid);
-
-function playVid() {
-    if (vid7.paused || vid7.ended) {
-        // vid7.volume = volLevel;
-        vid7.play();
-        playBtn.innerHTML = `<svg width="24px" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-width="1.5" d="M8.75 6.75V17.25" />
-        <path stroke="currentColor" stroke-width="1.5" d="M15.25 6.75V17.25" />
-    </svg>`;
-    } else {
-        pauseCurrentVid();
-    }
-};

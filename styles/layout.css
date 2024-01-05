@@ -128,6 +128,7 @@
 #fuzz {
     height: 100%;
     width: 100%;
+    object-fit: cover;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -141,6 +142,7 @@
 #fuzz-behind {
     height: 100%;
     width: 100%;
+    object-fit: cover;
     z-index: -1;
     display: flex;
     align-items: center;

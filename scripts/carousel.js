@@ -14,7 +14,8 @@ for (index = 0; index < howManyVids; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/trim/trim120vid' + rnd + '.mp4';
+    newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + ".1.webp";
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
     carouselItem.appendChild(newVid);
@@ -23,16 +24,17 @@ for (index = 0; index < howManyVids; index++) {
         carouselLeft[i].appendChild(clone);
         carouselVids = document.querySelectorAll(".carousel-video");
         carouselVidsProperties();
-        playRnd();
+        // playRnd();
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
+    newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + ".1.webp";
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
         carouselVids = document.querySelectorAll(".carousel-video");
         carouselVidsProperties();
-        playRnd();
+        // playRnd();
     }
 };
 
@@ -40,7 +42,8 @@ for (index = 0; index < howManyVids; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/trim/trim120vid' + rnd + '.mp4';
+    newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + ".1.webp";
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
     carouselItem.appendChild(newVid);
@@ -50,11 +53,12 @@ for (index = 0; index < howManyVids; index++) {
         carouselVids = document.querySelectorAll(".carousel-video");
         carouselVidsProperties();
         document.addEventListener("DOMContentLoaded", function () {
-            playRnd();
+            // playRnd();
         });
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
-    newVid.src = 'vids/120/trim/trim120vid' + rnd2 + '.mp4';
+    newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + ".1.webp";
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
@@ -73,6 +77,7 @@ function carouselVidsProperties() {
     carouselVids.forEach((element, index) => {
         element.loop = true;
         element.muted = true;
+        // element.autoplay = false;
         element.controls = false;
     });
 };
@@ -98,9 +103,6 @@ function playRnd() {
         });
     });
 };
-
-
-
 
 // slow down playback speed + enlarge vids on hover + show video title on bottom screen
 
@@ -177,7 +179,7 @@ let stopScrolling = false;
 
 carouselVids.forEach((element, index) => {
     element.addEventListener("click", () => {
-        swirl();
+        // swirl();
         stopScrolling = false;
         let fullSrc = element.src;
         let last6Characters = fullSrc.slice(-6);
