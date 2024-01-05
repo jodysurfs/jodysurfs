@@ -153,9 +153,15 @@
 }
 
 #controls-button {
-    font-size: 100%;
-    padding: .3em;
-    border: 1px solid black;
-    border-radius: 2px;
+    font-size: 80%;
+    padding: .4em 4em;
+    background-color: rgba(21, 255, 91, 0.406);
+    border: .1em ridge rgba(21, 255, 91, 0.806);
+    border-radius: .5em;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#controls-button:hover {
+    background-color: rgb(26, 209, 81, 0.4);
 }

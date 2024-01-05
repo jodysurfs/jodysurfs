@@ -9,16 +9,20 @@ const logoAnim2 = document.querySelector("#logo-anim2");
 function fadeFuzz() {
     fuzz.style.opacity = 0;
 }
-setTimeout(fadeFuzz, 3000);
+setTimeout(fadeFuzz, 2000);
 
 const loadingMessage = document.querySelector("#loading-message");
 const homeMessage = document.querySelector("#home-message");
 // const homeTitles = document.querySelector("#home-titles");
 setTimeout(function () {
     loadingMessage.style.opacity = 0;
-    homeMessage.style.opacity = 1;
-    homeTitles.style.opacity = 1;
-}, 3000);
+    setTimeout(function () {
+        homeMessage.style.opacity = 1;
+    }, 1000);
+    setTimeout(function () {
+        homeTitles.style.opacity = 1;
+    }, 2000);
+}, 2500);
 
 function playLogoAnim(i) {
     if (i < 166) {
