@@ -95,7 +95,7 @@
     position: absolute;
     pointer-events: none;
     z-index: 1;
-    opacity: .5;
+    /* opacity: .5; */
 }
 
 #underlay {
