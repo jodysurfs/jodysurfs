@@ -39,7 +39,20 @@
     justify-content: center;
 }
 
+#loading-message {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#home-message {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
 #home-titles {
+    opacity: 0;
+    transition: opacity 0.5s ease;
     font-size: 50%;
 }
 

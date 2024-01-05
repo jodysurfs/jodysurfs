@@ -1,4 +1,3 @@
-const message = "Pick a Video!";
 const carousel = document.querySelectorAll(".carousel");
 const carouselLeft = document.querySelectorAll(".carousel-left");
 const carouselRight = document.querySelectorAll(".carousel-right");
@@ -68,7 +67,7 @@ for (index = 0; index < howManyVids; index++) {
 };
 
 
-// add properties to carousel vids 
+// add properties to carousel vids
 
 function carouselVidsProperties() {
     carouselVids.forEach((element, index) => {
@@ -86,20 +85,20 @@ function showVids() {
     });
 };
 
-setTimeout(showVids, 5000); 
+setTimeout(showVids, 5000);
 
-// start playing carousel vids from a random point 
+// start playing carousel vids from a random point
 
 function playRnd() {
     carouselVids.forEach((element, index) => {
         element.addEventListener("loadedmetadata", function () {
-            let randomseconds = Math.floor(Math.random() * carouselVids[index].duration);
-            randomseconds = Math.min(randomseconds, element.duration);
-            element.currentTime = randomseconds;
+            randomsec = Math.min(Math.floor(Math.random() * 30), 30);
+            element.currentTime = randomsec;
             element.play();
         });
     });
 };
+
 
 
 

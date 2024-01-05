@@ -1,9 +1,24 @@
 const modal = document.querySelector("#controls-modal");
+const fuzz = document.querySelector("#fuzz");
 const vid7 = document.querySelector("#vid7");
 const playBtn = document.querySelector("#play-btn");
 const muteBtn = document.querySelector("#mute-btn");
 const logoAnim = document.querySelector("#logo-anim");
 const logoAnim2 = document.querySelector("#logo-anim2");
+
+function fadeFuzz() {
+    fuzz.style.opacity = 0;
+}
+setTimeout(fadeFuzz, 3000);
+
+const loadingMessage = document.querySelector("#loading-message");
+const homeMessage = document.querySelector("#home-message");
+// const homeTitles = document.querySelector("#home-titles");
+setTimeout(function () {
+    loadingMessage.style.opacity = 0;
+    homeMessage.style.opacity = 1;
+    homeTitles.style.opacity = 1;
+}, 3000);
 
 function playLogoAnim(i) {
     if (i < 166) {
@@ -75,6 +90,3 @@ function playVid() {
         pauseCurrentVid();
     }
 };
-
-const homeMessage = document.querySelector("#home-message");
-homeMessage.innerHTML = message;

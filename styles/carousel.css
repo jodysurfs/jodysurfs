@@ -80,11 +80,11 @@
     justify-content: center;
     overflow: hidden;
 }
-
+/*
 .carousel-video {
     opacity: 0;
     transition: opacity 2s ease;
-}
+} */
 
 video {
     max-height: 110%;
