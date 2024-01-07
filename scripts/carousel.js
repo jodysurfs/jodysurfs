@@ -177,6 +177,8 @@ function infiniteTextScroll() {
 
 let stopScrolling = false;
 
+let currentVidIndex = 0;
+
 carouselVids.forEach((element, index) => {
     element.addEventListener("click", () => {
         // swirl();
@@ -186,6 +188,7 @@ carouselVids.forEach((element, index) => {
         let cleanedSrc = last6Characters.replace('.mp4', '').replace(/[^0-9]/g, '');
         let bigVid = document.createElement('video');
         bigVid.src = 'vids/240/240vid' + cleanedSrc + '.mp4';
+        currentVidIndex = cleanedSrc;
         bigVid.classList.add(`big-vid`);
         bigVid.autoplay = true;
         bigVid.muted = true;

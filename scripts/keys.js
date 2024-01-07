@@ -73,23 +73,23 @@ function slowDown(e) {
 
 // UP+DOWN - INCREMENT VOLUME
 
-function volUp(e) {
-    e.preventDefault();
-    volLevel = Math.min(volLevel + 0.1, 1);
-    if (typeof currentVid !== 'undefined') {
-        currentVid.volume = volLevel; bigVid
-    };
-};
+// function volUp(e) {
+//     e.preventDefault();
+//     volLevel = Math.min(volLevel + 0.1, 1);
+//     if (typeof currentVid !== 'undefined') {
+//         currentVid.volume = volLevel; bigVid
+//     };
+// };
 
-function volDown(e) {
-    e.preventDefault();
-    volLevel = Math.max(volLevel - 0.1, 0);
-    if (typeof currentVid !== 'undefined') {
-        currentVid.volume = volLevel;
-    };
-};
+// function volDown(e) {
+//     e.preventDefault();
+//     volLevel = Math.max(volLevel - 0.1, 0);
+//     if (typeof currentVid !== 'undefined') {
+//         currentVid.volume = volLevel;
+//     };
+// };
 
-// M to mute video
+// M or m to mute video
 
 document.addEventListener('keydown', e => {
     if (e.code === 'KeyM' || e.key.toLowerCase === 'm' || e.key === 'M') {
@@ -132,5 +132,22 @@ document.addEventListener('keydown', function (event) {
         let segmentNumber = parseInt(event.key);
         let targetTime = segmentNumber * segmentDuration;
         bigVid.currentTime = targetTime;
+    }
+});
+
+// f or F to fullscreen
+
+document.addEventListener('keydown', function (e) {
+    if (e.code === 'KeyF' || e.key.toLowerCase === 'f' || e.key === 'F') {
+        let bigVid = document.querySelector(`.big-vid`);
+        if (!bigVid) return;
+        let targetTime = bigVid.currentTime;
+        bigVid.src = 'vids/full/vid' + currentVidIndex + '.mp4';
+        bigVid.currentTime = targetTime;
+        bigVid.requestFullscreen().then(() => {
+            bigVid.controls = false;
+        }).catch((err) => {
+            console.error('Error attempting to enable fullscreen:', err.message);
+        });
     }
 });

@@ -19,6 +19,13 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        LOADING...
+        <div id="loading-bar">
+            <div id="loading-bar-progress"></div>
+        </div>
+    </div>
+
     <div id="overlay-container">
         <img id="underlay" src="pics/underlay1.webp" alt="">
         <img id="overlay" src="pics/overlay.webp" alt="">
@@ -27,7 +34,8 @@
         <div id="console">
             <div id="screen-1">
                 <div id="fuzz">
-                    <video muted="true" autoplay="true" loop="true" src="vids/fuzz/fuzz.mp4" poster="vids/fuzz/fuzz-poster.webp"></video>
+                    <video muted="true" autoplay="true" loop="true" src="vids/fuzz/fuzz.mp4"
+                        poster="vids/fuzz/fuzz-poster.webp"></video>
                 </div>
                 <div class="carousel" id="carousel-1">
                     <div class="carousel-left primary"></div>
@@ -52,7 +60,7 @@
             <div id="screen-2">
                 <div class="s2" id="home-container">
                     <div class="home" id="loading-message">
-                        Loading...
+                        <!-- Loading... -->
                     </div>
                     <div class="home" id="home-message">
                         Pick a Video!
