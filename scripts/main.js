@@ -3,24 +3,50 @@ const overlayContainer = document.querySelector("#overlay-container");
 const modal = document.querySelector("#controls-modal");
 const fuzz = document.querySelector("#fuzz");
 const vid7 = document.querySelector("#vid7");
+const enter = document.querySelector("#enter");
 const playBtn = document.querySelector("#play-btn");
 const muteBtn = document.querySelector("#mute-btn");
 const logoAnim = document.querySelector("#logo-anim");
 const logoAnim2 = document.querySelector("#logo-anim2");
 var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+let timer1 = 7000;
+
 if (screenHeight > 2000) {
     document.getElementById('fuzzVideo').src = 'vids/fuzz/fuzz-big.mp4';
 }
 
-function fadePage() {
+function hideSplash() {
     loadingScreen.style.opacity = 0;
+}
+// setTimeout(fadePage, 20);
+
+function revealEnter() {
+    enter.style.opacity = 1;
+    enter.style.filter = 'blur(0px)';
+    enter.style.filter = 'blur(0px)';
+    enter.style.pointerEvents = 'all';
+    enter.style.cursor = 'pointer';
+};
+
+setTimeout(revealEnter, 1500);
+
+function revealConsole() {
+    overlayContainer.style.opacity = '1';
     overlayContainer.style.filter = 'blur(0px)';
 }
-setTimeout(fadePage, 50);
+
+enter.addEventListener('click', function() {
+    enter.style.pointerEvents = 'none';
+    enter.style.cursor = 'default';
+    revealConsole();
+    hideSplash();
+});
+
 
 function fadeFuzz() {
     fuzz.style.opacity = 0;
+    fuzz.style.pointerEvents = 'none';
 }
 setTimeout(fadeFuzz, 6000);
 

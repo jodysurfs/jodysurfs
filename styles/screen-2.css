@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     filter: drop-shadow(-5px 5px 4px #00000050);
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .s2 {
@@ -46,7 +46,7 @@
 }
 
 #home-message {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease;
 }
 
