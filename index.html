@@ -35,8 +35,8 @@
     <div id="overlay-container">
         <img id="underlay" src="pics/underlay1.webp" alt="">
         <img id="overlay" src="pics/overlay.webp" alt="">
-        <img class="logo" id="logo-anim" src="pics/logo-anim/logo_0000.png">
-        <img class="logo" id="logo-anim2" src="pics/logo-anim2/logo_0000.png">
+        <!-- <img class="logo" id="logo-anim" src="pics/logo-anim/logo_0000.png"> -->
+        <!-- <img class="logo" id="logo-anim2" src="pics/logo-anim2/logo_0000.png"> -->
         <div id="console">
             <div id="screen-1">
                 <div id="fuzz">
@@ -91,22 +91,28 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="vid-info" id="prog-bar">PROGBAR</div> -->
-                    <div class="vid-info" id="open-controls">
-                        <div id="controls-button">
-                            CONTROLS
-                        </div>
+                    <div class="vid-info" id="home-arrows">
+                        <svg id="arrow-left-svg" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,10 h10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(-45, 5, 10)" />
+                            <path d="M5,10 h10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(45, 5, 10)" />
+                            <path d="M5,10 h20" stroke="black" stroke-linecap="round" stroke-width="3" />
+                         </svg>
+                        <svg id="home-icon" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke="#000" d="m 5,20 l20,-15 l20,15 l-5,0 l0,20 l-10,0 l0,-10 l-10,0 l10,0 l-10,0 l0,10, l-10,0 l0,-20 z"/>
+                        </svg>
+                        <svg id="arrow-right-svg" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25,10 h-10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(-45, 25, 10)" />
+                            <path d="M25,10 h-10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(45, 25, 10)" />
+                            <path d="M5,10 h20" stroke="black" stroke-linecap="round" stroke-width="3" />
+                         </svg>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div id="arrows-container">
-            <div class="arrows">
-                <img id="arrow-left" src="icons/arrow-left.webp" alt="">
-            </div>
-            <div class="arrows">
-                <img id="arrow-right" src="icons/arrow-right.webp" alt="">
-            </div>
+
+        <!-- <div id="extras-container">
+            <img class="arrows" id="arrow-left" src="icons/arrow-left.webp" alt="">
+            <img class="arrows" id="arrow-right" src="icons/arrow-right.webp" alt="">
         </div> -->
         <div class="modal" id="controls-modal">
             <div id="close-modal">
@@ -116,7 +122,7 @@
             </div>
             CONTROLS
         </div>
-
+    </div>
 </body>
 <script src="scripts/titles.js"></script>
 <script src="scripts/carousel.js"></script>

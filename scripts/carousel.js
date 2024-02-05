@@ -14,8 +14,9 @@ for (index = 0; index < howManyVids; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
+    let rnd123 = Math.floor(Math.random() * 3) + 1;
     newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
-    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + ".1.webp";
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + "." + rnd123 + ".webp";
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
     carouselItem.appendChild(newVid);
@@ -28,7 +29,7 @@ for (index = 0; index < howManyVids; index++) {
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
     newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
-    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + ".1.webp";
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + "." + rnd123 + ".webp";
     for (i = 0; i < 2; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
@@ -42,8 +43,9 @@ for (index = 0; index < howManyVids; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
     let rnd = Math.floor(Math.random() * howManyVids);
+    let rnd123 = Math.floor(Math.random() * 3) + 1;
     newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
-    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + ".1.webp";
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd + "." + rnd123 + ".webp";
     newVid.classList.add(`carousel-video`);
     carouselItem.classList.add(`carousel-item`);
     carouselItem.appendChild(newVid);
@@ -58,7 +60,7 @@ for (index = 0; index < howManyVids; index++) {
     };
     let rnd2 = Math.floor(Math.random() * howManyVids);
     newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
-    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + ".1.webp";
+    newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + "." + rnd123 + ".webp";
     for (i = 2; i < 4; i++) {
         let clone = carouselItem.cloneNode(true);
         carouselRight[i].appendChild(clone);
@@ -193,7 +195,7 @@ carouselVids.forEach((element, index) => {
         bigVid.autoplay = true;
         bigVid.muted = true;
         bigVid.controls = false;
-        bigVid.loop = true;
+        bigVid.loop = false;
         bigVid.style.height = getComputedStyle(screen1).height;
         screen1.appendChild(bigVid);
         bigVid.addEventListener('click', () => {

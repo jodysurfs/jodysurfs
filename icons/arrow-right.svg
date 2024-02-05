@@ -1,0 +1,5 @@
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+   <path d="M25,10 h-10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(-45, 25, 10)" />
+   <path d="M25,10 h-10" stroke="black" stroke-linecap="round" stroke-width="3" transform="rotate(45, 25, 10)" />
+   <path d="M5,10 h20" stroke="black" stroke-linecap="round" stroke-width="3" />
+</svg>

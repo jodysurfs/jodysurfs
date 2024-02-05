@@ -165,3 +165,21 @@
 #controls-button:hover {
     background-color: rgb(26, 209, 81, 0.4);
 }
+
+.vid-info svg path,
+.vid-info svg rect {
+  fill: rgb(35, 133, 225);
+  stroke: rgb(25, 38, 125);
+}
+
+#home-arrows>*:hover {
+    opacity: .7;
+    cursor: pointer;
+    stroke: #d2deec;
+    filter: hue-rotate(90deg);
+    filter:
+        drop-shadow(2px 2px 0 rgba(135, 255, 157, 0.8))
+        drop-shadow(2px -2px 0 rgba(135, 255, 157, 0.8))
+        drop-shadow(-2px 2px 0 rgba(135, 255, 157, 0.8))
+        drop-shadow(-2px -2px 0 rgba(135, 255, 157, 0.8));
+}
