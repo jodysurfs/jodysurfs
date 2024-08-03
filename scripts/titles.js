@@ -24,7 +24,7 @@ const flava = [
     `let's triiiiip`,
     `permanently wavy bro`,
     `(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ`,
-    `This guy is vague af tbh`,
+    `🥵🥵🥵🥵🥵🥵`,
     `love me some loveloops`,
     `wow he is sending so many emails!!!!`,
     `never change bro`,
