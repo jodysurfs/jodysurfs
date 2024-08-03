@@ -26,11 +26,17 @@ const arrowRight = document.querySelector("#arrow-right-svg");
 
 arrowLeft.addEventListener("click", () => {
 	let prev = vidIndex - 1;
+	if (vidIndex == 0) {
+		prev = howManyVids - 1;
+	}
 	window.location.href = `vid` + prev + `.html`;
 });
 
 arrowRight.addEventListener("click", () => {
 	let next = ++vidIndex;
+	if (vidIndex == howManyVids) {
+		next = 0;
+	}
 	window.location.href = `vid` + next + `.html`;
 });
 
