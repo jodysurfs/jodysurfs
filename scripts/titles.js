@@ -6,11 +6,18 @@ const titles = [
     `DEVOUR YOUR ENEMIES - LOVELOOP`,
     `Lord of Email - Lite Green Neon Bombs`,
     `Dandy Deniz - Change`,
-    `jody surfs - race cars`,
-    // `mallgoth emo sad animation`,
+    `jody surfs - race cars`
 ];
 
-const howManyVids = titles.length;
+const urls = [
+    `QMybAXik3WY`,
+    `Q8R9vdoYpoI`,
+    `UxqumxfNojk`,
+    `QBtpNxeXga4`,
+    `kKX-zMKxUDo`,
+    `nQ6nunblMAo`,
+    `ZNodMcBo9CE`
+];
 
 const flava = [
     `let's triiiiip`,
@@ -22,3 +29,5 @@ const flava = [
     `never change bro`,
     `let's start the race!`,
 ];
+
+const howManyVids = titles.length;

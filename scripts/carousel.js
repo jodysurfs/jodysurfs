@@ -165,95 +165,15 @@ carousel[3].addEventListener("mouseleave", function () {
     carouselRight[3].style.animationPlayState = "running";
 });
 
-// carousel vids go big on click
-
-const screen2 = document.querySelector("#screen-2");
-const homeContainer = document.querySelector("#home-container");
-const vidInfoContainer = document.querySelector("#vid-info-container");
-const songInfo = document.querySelectorAll(".song-info");
-const albumArt = document.querySelector("#album-art");
-
-function infiniteTextScroll() {
-    songInfo[1].style.transform = 'translateX(-100%)';
-}
-
-let stopScrolling = false;
+// link to relevant vid.html page
 
 let currentVidIndex = 0;
 
 carouselVids.forEach((element, index) => {
     element.addEventListener("click", () => {
-        // swirl();
-        stopScrolling = false;
         let fullSrc = element.src;
         let last6Characters = fullSrc.slice(-6);
         let cleanedSrc = last6Characters.replace('.mp4', '').replace(/[^0-9]/g, '');
-        let bigVid = document.createElement('video');
-        bigVid.src = 'vids/240/240vid' + cleanedSrc + '.mp4';
-        currentVidIndex = cleanedSrc;
-        bigVid.classList.add(`big-vid`);
-        bigVid.autoplay = true;
-        bigVid.muted = true;
-        bigVid.controls = false;
-        bigVid.loop = false;
-        bigVid.style.height = getComputedStyle(screen1).height;
-        screen1.appendChild(bigVid);
-        bigVid.addEventListener('click', () => {
-            if (bigVid.paused || bigVid.ended) {
-                bigVid.play();
-            } else {
-                bigVid.pause();
-            }
-        });
-        homeContainer.style.transition = "opacity .2s ease";
-        homeContainer.style.opacity = 0;
-        setTimeout(function () {
-            homeContainer.style.display = "none";
-            vidInfoContainer.style.display = "flex";
-        }, 200);
-        vidInfoContainer.style.transition = "opacity .2s ease";
-        vidInfoContainer.style.opacity = 1;
-        albumArt.innerHTML = `<img src="pics/album-art/` + cleanedSrc + `.webp">`;
-        let parts = titles[cleanedSrc].split(' - ');
-        songInfo[0].innerHTML = parts[1];
-        songInfo[1].innerHTML = parts[0];
-        songInfo[2].innerHTML = `\"` + flava[cleanedSrc] + `\"`;
-        songInfo.forEach((element, index) => {
-            element.style.transition = 'transform 0s linear';
-            element.style.transform = 'translateX(0%)';
-            let textLength = element.innerHTML.length;
-            if (textLength > 19) {
-                function scroll1() {
-                    element.style.transition = `transform ${textLength / 6}s linear`;
-                    element.style.transform = `translateX(-${textLength * 4}%)`;
-                    setTimeout(scroll2, (textLength / 6) * 1000);
-                };
-                function scroll2() {
-                    if (stopScrolling) {
-                        element.style.transition = 'transform 0s linear';
-                        element.style.transform = 'translateX(0%)';
-                        return;
-                    };
-                    element.style.transition = 'transform 0s linear';
-                    element.style.transform = 'translateX(80%)';
-                    setTimeout(function () {
-                        if (stopScrolling) {
-                            element.style.transition = 'transform 0s linear';
-                            element.style.transform = 'translateX(0%)';
-                            return;
-                        };
-                        element.style.transition = `transform ${textLength / 3}s linear`;
-                        element.style.transform = `translateX(-${textLength * 4}%)`;
-                        setTimeout(scroll2, (textLength / 3) * 1000);
-                    }, 10);
-                };
-                setTimeout(scroll1, 1000);
-            }
-            else {
-                element.style.transition = 'transform 0s linear';
-                element.style.transform = 'translateX(0%)';
-                return;
-            };
-        });
+        window.location.href = `vid${cleanedSrc}.html`;
     });
 });
