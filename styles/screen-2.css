@@ -1,6 +1,8 @@
 #screen-2 {
     transform-origin: center left;
     transform: rotate(-5deg) perspective(100px) rotateY(1.5deg) rotateX(4deg);
+    -webkit-transform-origin: center left;
+    -webkit-transform: rotate(-5deg) perspective(100px) rotateY(1.5deg) rotateX(4deg);
     position: relative;
     top: 24%;
     left: 5%;
@@ -68,7 +70,6 @@
 .vid-info {
     flex: 0 0 20%;
     font-size: 50%;
-
 }
 
 #ipod-info {
@@ -168,8 +169,8 @@
 
 .vid-info svg path,
 .vid-info svg rect {
-  fill: rgb(35, 133, 225);
-  stroke: rgb(25, 38, 125);
+    fill: rgb(35, 133, 225);
+    stroke: rgb(25, 38, 125);
 }
 
 #home-arrows>*:hover {
@@ -178,8 +179,5 @@
     stroke: #d2deec;
     filter: hue-rotate(90deg);
     filter:
-        drop-shadow(2px 2px 0 rgba(135, 255, 157, 0.8))
-        drop-shadow(2px -2px 0 rgba(135, 255, 157, 0.8))
-        drop-shadow(-2px 2px 0 rgba(135, 255, 157, 0.8))
-        drop-shadow(-2px -2px 0 rgba(135, 255, 157, 0.8));
+        drop-shadow(2px 2px 0 rgba(135, 255, 157, 0.8)) drop-shadow(2px -2px 0 rgba(135, 255, 157, 0.8)) drop-shadow(-2px 2px 0 rgba(135, 255, 157, 0.8)) drop-shadow(-2px -2px 0 rgba(135, 255, 157, 0.8));
 }
