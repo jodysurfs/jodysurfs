@@ -6,14 +6,14 @@ const bottomCarousel = document.querySelector("#bottom-carousel");
 let carouselVids = document.querySelectorAll(".carousel-video");
 let videoFileTitles = [];
 
-for (i = 0; i < howManyVids; i++) {
+for (i = 0; i < 8; i++) {
     videoFileTitles.push('vid' + i + '.mp4');
 };
 
-for (index = 0; index < howManyVids; index++) {
+for (index = 0; index < 8; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
-    let rnd = Math.floor(Math.random() * howManyVids);
+    let rnd = Math.floor(Math.random() * 8);
     let rnd123 = Math.floor(Math.random() * 3) + 1;
     newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
     newVid.poster = "vids/120trim/poster/poster-vid" + rnd + "." + rnd123 + ".webp";
@@ -27,7 +27,7 @@ for (index = 0; index < howManyVids; index++) {
         carouselVidsProperties();
         // playRnd();
     };
-    let rnd2 = Math.floor(Math.random() * howManyVids);
+    let rnd2 = Math.floor(Math.random() * 8);
     newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
     newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + "." + rnd123 + ".webp";
     for (i = 0; i < 2; i++) {
@@ -39,10 +39,10 @@ for (index = 0; index < howManyVids; index++) {
     }
 };
 
-for (index = 0; index < howManyVids; index++) {
+for (index = 0; index < 8; index++) {
     let newVid = document.createElement('video');
     let carouselItem = document.createElement('div');
-    let rnd = Math.floor(Math.random() * howManyVids);
+    let rnd = Math.floor(Math.random() * 8);
     let rnd123 = Math.floor(Math.random() * 3) + 1;
     newVid.src = 'vids/120trim/trim120vid' + rnd + '.mp4';
     newVid.poster = "vids/120trim/poster/poster-vid" + rnd + "." + rnd123 + ".webp";
@@ -58,7 +58,7 @@ for (index = 0; index < howManyVids; index++) {
             // playRnd();
         });
     };
-    let rnd2 = Math.floor(Math.random() * howManyVids);
+    let rnd2 = Math.floor(Math.random() * 8);
     newVid.src = 'vids/120trim/trim120vid' + rnd2 + '.mp4';
     newVid.poster = "vids/120trim/poster/poster-vid" + rnd2 + "." + rnd123 + ".webp";
     for (i = 2; i < 4; i++) {
