@@ -7,7 +7,8 @@ const titles = [
     `Lord of Email - Lite Green Neon Bombs`,
     `Dandy Deniz - Change`,
     `jody surfs - race cars`,
-    'Angel Rider - No More Kissing Frogz'
+    'Angel Rider - No More Kissing Frogz',
+    'CV Vision - Zauberer und die Hex'
 ];
 
 const urls = [
@@ -19,7 +20,8 @@ const urls = [
     `nQ6nunblMAo`,
     `ZNodMcBo9CE`,
     `LNPDXmf6o58`,
-    '3rr7SlWotBk'
+    '3rr7SlWotBk',
+    '0gB3baQ4eyg'
 ];
 
 const flava = [
@@ -31,7 +33,8 @@ const flava = [
     `wow he is sending so many emails!!!!`,
     `never change bro`,
     `let's start the race!`,
-    'slime time'
+    'slime time',
+    'the drama of co-parenting, the power of creation'
 ];
 
 const howManyVids = titles.length;
