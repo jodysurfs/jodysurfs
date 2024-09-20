@@ -3,6 +3,10 @@ body {
 	background-repeat: repeat;
 }
 
+button {
+	cursor: pointer;
+}
+
 #page-width {
 	width: 100%;
 	display: flex;
@@ -16,6 +20,17 @@ body {
 	align-items: center;
 }
 
+#title {
+	margin: 3%;
+	font-size: xxx-large;
+	/* border: 3px pink solid;
+	border-radius: 10px;
+	background-color: aqua; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #column img {
 	max-width: 1000px;
 }
@@ -24,4 +39,15 @@ body {
 	/* padding: 1em; */
 	/* padding: 20px; */
 	padding: 2%;
+}
+
+#column button {
+	border-radius: 40px;
+	padding: 1%;
+	white-space: nowrap;
+	padding: 10px 20px;
+	font-size: 16px;
+	/* width: 80%; */
+	font-size: large;
+	margin-bottom: 20px;
 }
