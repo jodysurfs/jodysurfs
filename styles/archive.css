@@ -1,0 +1,27 @@
+body {
+	background-image: url('../pics/bg-no-console.webp');
+	background-repeat: repeat;
+}
+
+#page-width {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#column {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#column img {
+	max-width: 1000px;
+}
+
+#column * {
+	/* padding: 1em; */
+	/* padding: 20px; */
+	padding: 2%;
+}
