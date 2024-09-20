@@ -32,7 +32,12 @@ button {
 }
 
 #column img {
+	width: 1000px;
+}
+
+#column img, iframe {
 	max-width: 1000px;
+	max-width: 90%;
 }
 
 #column * {
